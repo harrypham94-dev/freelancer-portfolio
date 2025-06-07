@@ -98,7 +98,7 @@ export default function Services() {
 
   return (
     <Container maxWidth="lg">
-      <Box>
+      <Box sx={{ py: 4 }}>
         <Typography variant="h2" gutterBottom>
           Services
         </Typography>

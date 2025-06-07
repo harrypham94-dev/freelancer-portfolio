@@ -61,7 +61,6 @@ export default function Contact() {
             alignItems: "flex-start",
           }}
         >
-          {/* Contact Information Cards */}
           <Grid>
             <Box sx={{ position: { md: "sticky" }, top: { md: 24 } }}>
               <Stack spacing={2}>
