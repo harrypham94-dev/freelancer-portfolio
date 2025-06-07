@@ -14,7 +14,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename="/freelancer-portfolio">
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
