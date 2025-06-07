@@ -4,17 +4,15 @@ import {
   AppBar,
   Box,
   CssBaseline,
-  Drawer,
   IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
   Button,
   useTheme,
   useMediaQuery,
+  Menu,
+  MenuItem,
+  Stack,
 } from "@mui/material";
 import {
   Menu as MenuIcon,
@@ -30,8 +28,6 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const drawerWidth = 240;
-
 const menuItems = [
   { text: "Home", path: "/", icon: <Home /> },
   { text: "About", path: "/about", icon: <Person /> },
@@ -42,81 +38,102 @@ const menuItems = [
 ];
 
 export default function Layout({ children }: LayoutProps) {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(
+    null
+  );
   const navigate = useNavigate();
   const location = useLocation();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+  const handleOpenMobileMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setMobileMenuAnchor(event.currentTarget);
+  };
+
+  const handleCloseMobileMenu = () => {
+    setMobileMenuAnchor(null);
   };
 
   const handleNavigation = (path: string) => {
     navigate(path);
-    if (isMobile) {
-      setMobileOpen(false);
-    }
+    handleCloseMobileMenu();
   };
 
-  const drawer = (
-    <Box>
-      <Toolbar />
-      <List>
-        {menuItems.map((item) => (
-          <ListItem
-            key={item.text}
-            onClick={() => handleNavigation(item.path)}
-            sx={{
-              "&.Mui-selected": {
-                backgroundColor: theme.palette.primary.light,
-                color: theme.palette.primary.contrastText,
-                "&:hover": {
-                  backgroundColor: theme.palette.primary.main,
-                },
-              },
-            }}
-          >
-            <ListItemIcon
-              sx={{
-                color: location.pathname === item.path ? "inherit" : undefined,
-              }}
-            >
-              {item.icon}
-            </ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
-      >
+      <AppBar position="fixed">
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: { xs: 1, md: 0 }, mr: 4 }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Portfolio
           </Typography>
+
+          {isMobile ? (
+            <>
+              <IconButton
+                color="inherit"
+                aria-label="open menu"
+                edge="start"
+                onClick={handleOpenMobileMenu}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                anchorEl={mobileMenuAnchor}
+                open={Boolean(mobileMenuAnchor)}
+                onClose={handleCloseMobileMenu}
+                keepMounted
+              >
+                {menuItems.map((item) => (
+                  <MenuItem
+                    key={item.text}
+                    onClick={() => handleNavigation(item.path)}
+                    selected={location.pathname === item.path}
+                  >
+                    <Box component="span" sx={{ mr: 1, display: "flex" }}>
+                      {item.icon}
+                    </Box>
+                    {item.text}
+                  </MenuItem>
+                ))}
+              </Menu>
+            </>
+          ) : (
+            <Stack direction="row" spacing={1} sx={{ flexGrow: 1 }}>
+              {menuItems.map((item) => (
+                <Button
+                  key={item.text}
+                  color="inherit"
+                  onClick={() => handleNavigation(item.path)}
+                  startIcon={item.icon}
+                  sx={{
+                    backgroundColor:
+                      location.pathname === item.path
+                        ? theme.palette.primary.dark
+                        : "transparent",
+                    "&:hover": {
+                      backgroundColor:
+                        location.pathname === item.path
+                          ? theme.palette.primary.dark
+                          : "rgba(255, 255, 255, 0.08)",
+                    },
+                  }}
+                >
+                  {item.text}
+                </Button>
+              ))}
+            </Stack>
+          )}
+
           {!isMobile && (
             <Button
-              color="inherit"
+              variant="contained"
+              color="secondary"
               onClick={() => handleNavigation("/contact")}
             >
               Contact Me
@@ -125,46 +142,11 @@ export default function Layout({ children }: LayoutProps) {
         </Toolbar>
       </AppBar>
       <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-      >
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: "none", sm: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box
         component="main"
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          width: "100%",
           marginTop: "64px",
         }}
       >
