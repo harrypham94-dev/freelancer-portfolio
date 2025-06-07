@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "title": "Professional Fullstack Developer",
+    "subtitle": "Turning Ideas into Reality",
+    "description": "Hi, I'm a passionate fullstack developer specializing in creating robust and scalable web applications. With expertise in both frontend and backend technologies, I help businesses transform their ideas into powerful digital solutions.",
+    "socialLinks": {
+      "github": "https://github.com/yourusername",
+      "linkedin": "https://linkedin.com/in/yourusername",
+      "cv": "/path-to-your-cv.pdf"
+    }
+  },
+  "skills": [
+    "Frontend Development",
+    "Backend Development",
+    "Database Design",
+    "API Development",
+    "Cloud Services",
+    "DevOps"
+  ]
+}

@@ -13,44 +13,35 @@ import {
   LinkedIn as LinkedInIcon,
   GitHub as GitHubIcon,
 } from "@mui/icons-material";
+import contactData from "../data/contact.json";
+import type { ContactData } from "../types";
 
 export default function Contact() {
-  const contactInfo = [
-    {
-      icon: <EmailIcon color="primary" fontSize="large" />,
-      title: "Email",
-      content: "your.email@example.com",
-      link: "mailto:your.email@example.com",
-    },
-    {
-      icon: <PhoneIcon color="primary" fontSize="large" />,
-      title: "Phone",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
-    },
-    {
-      icon: <LinkedInIcon color="primary" fontSize="large" />,
-      title: "LinkedIn",
-      content: "linkedin.com/in/yourprofile",
-      link: "https://linkedin.com/in/yourprofile",
-    },
-    {
-      icon: <GitHubIcon color="primary" fontSize="large" />,
-      title: "GitHub",
-      content: "github.com/yourusername",
-      link: "https://github.com/yourusername",
-    },
-  ];
+  const data: ContactData = contactData;
+
+  const getIcon = (iconType: string) => {
+    switch (iconType) {
+      case "Email":
+        return <EmailIcon color="primary" fontSize="large" />;
+      case "Phone":
+        return <PhoneIcon color="primary" fontSize="large" />;
+      case "LinkedIn":
+        return <LinkedInIcon color="primary" fontSize="large" />;
+      case "GitHub":
+        return <GitHubIcon color="primary" fontSize="large" />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <Container maxWidth="lg">
       <Box sx={{ py: 4 }}>
         <Typography variant="h2" gutterBottom>
-          Contact Me
+          {data.title}
         </Typography>
         <Typography variant="body1" paragraph>
-          Have a project in mind? Let's discuss how we can work together to
-          bring your ideas to life.
+          {data.description}
         </Typography>
 
         <Grid
@@ -64,7 +55,7 @@ export default function Contact() {
           <Grid>
             <Box sx={{ position: { md: "sticky" }, top: { md: 24 } }}>
               <Stack spacing={2}>
-                {contactInfo.map((info) => (
+                {data.contactInfo.map((info) => (
                   <Card
                     key={info.title}
                     sx={{
@@ -89,7 +80,7 @@ export default function Contact() {
                           color: "inherit",
                         }}
                       >
-                        {info.icon}
+                        {getIcon(info.iconType)}
                         <Box>
                           <Typography variant="h6" gutterBottom>
                             {info.title}

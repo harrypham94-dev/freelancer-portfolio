@@ -19,82 +19,28 @@ import {
   Build as BuildIcon,
   Assignment as AssignmentIcon,
 } from "@mui/icons-material";
+import servicesData from "../data/services.json";
+import type { ServicesData } from "../types";
 
 export default function Services() {
-  const services = [
-    {
-      title: "Frontend Development",
-      icon: <CodeIcon color="primary" />,
-      description: "Building responsive and interactive user interfaces",
-      features: [
-        "React/Next.js Applications",
-        "Angular Development",
-        "Vue.js Solutions",
-        "Responsive Design",
-        "Performance Optimization",
-      ],
-    },
-    {
-      title: "Backend Development",
-      icon: <StorageIcon color="primary" />,
-      description: "Creating robust and scalable server-side solutions",
-      features: [
-        "Node.js/Express Applications",
-        "Python/Django Solutions",
-        "PHP/Laravel Development",
-        "RESTful API Design",
-        "Authentication & Authorization",
-      ],
-    },
-    {
-      title: "Database Design",
-      icon: <StorageIcon color="primary" />,
-      description: "Optimizing data storage and retrieval",
-      features: [
-        "Database Architecture",
-        "SQL Optimization",
-        "NoSQL Solutions",
-        "Data Migration",
-        "Performance Tuning",
-      ],
-    },
-    {
-      title: "Cloud Services",
-      icon: <CloudIcon color="primary" />,
-      description: "Deploying and managing cloud infrastructure",
-      features: [
-        "AWS Solutions",
-        "Google Cloud Platform",
-        "Azure Services",
-        "Server Configuration",
-        "Cloud Migration",
-      ],
-    },
-    {
-      title: "API Development",
-      icon: <ApiIcon color="primary" />,
-      description: "Creating and integrating APIs",
-      features: [
-        "RESTful API Design",
-        "GraphQL Implementation",
-        "API Documentation",
-        "Integration Testing",
-        "Performance Monitoring",
-      ],
-    },
-    {
-      title: "Technical Consulting",
-      icon: <AssignmentIcon color="primary" />,
-      description: "Providing expert technical guidance",
-      features: [
-        "Architecture Planning",
-        "Technology Selection",
-        "Code Review",
-        "Best Practices",
-        "Performance Optimization",
-      ],
-    },
-  ];
+  const data: ServicesData = servicesData;
+
+  const getIcon = (iconType: string) => {
+    switch (iconType) {
+      case "Code":
+        return <CodeIcon color="primary" />;
+      case "Storage":
+        return <StorageIcon color="primary" />;
+      case "Cloud":
+        return <CloudIcon color="primary" />;
+      case "Api":
+        return <ApiIcon color="primary" />;
+      case "Assignment":
+        return <AssignmentIcon color="primary" />;
+      default:
+        return <BuildIcon color="primary" />;
+    }
+  };
 
   return (
     <Container maxWidth="lg">
@@ -109,11 +55,11 @@ export default function Services() {
         </Typography>
 
         <Grid container spacing={3}>
-          {services.map((service) => (
+          {data.services.map((service) => (
             <Grid key={service.title}>
               <Card sx={{ height: "100%" }}>
                 <CardHeader
-                  avatar={service.icon}
+                  avatar={getIcon(service.iconType)}
                   title={service.title}
                   titleTypographyProps={{ variant: "h6" }}
                 />

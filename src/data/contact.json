@@ -1,0 +1,30 @@
+{
+  "title": "Contact Me",
+  "description": "Have a project in mind? Let's discuss how we can work together to bring your ideas to life.",
+  "contactInfo": [
+    {
+      "title": "Email",
+      "content": "your.email@example.com",
+      "link": "mailto:your.email@example.com",
+      "iconType": "Email"
+    },
+    {
+      "title": "Phone",
+      "content": "+1 (555) 123-4567",
+      "link": "tel:+15551234567",
+      "iconType": "Phone"
+    },
+    {
+      "title": "LinkedIn",
+      "content": "linkedin.com/in/yourprofile",
+      "link": "https://linkedin.com/in/yourprofile",
+      "iconType": "LinkedIn"
+    },
+    {
+      "title": "GitHub",
+      "content": "github.com/yourusername",
+      "link": "https://github.com/yourusername",
+      "iconType": "GitHub"
+    }
+  ]
+}

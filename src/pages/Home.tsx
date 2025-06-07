@@ -1,9 +1,12 @@
 import { Box, Button, Container, Typography, Grid, Paper } from "@mui/material";
 import { GitHub, LinkedIn, Download } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import homeData from "../data/home.json";
+import type { HomeData } from "../types";
 
 export default function Home() {
   const navigate = useNavigate();
+  const data: HomeData = homeData;
 
   return (
     <Container maxWidth="lg">
@@ -11,16 +14,13 @@ export default function Home() {
         <Grid>
           <Box sx={{ mt: { xs: 2, md: 8 } }}>
             <Typography variant="h1" gutterBottom>
-              Professional Fullstack Developer
+              {data.hero.title}
             </Typography>
             <Typography variant="h2" color="primary" gutterBottom>
-              Turning Ideas into Reality
+              {data.hero.subtitle}
             </Typography>
             <Typography variant="body1" paragraph sx={{ mb: 4 }}>
-              Hi, I'm a passionate fullstack developer specializing in creating
-              robust and scalable web applications. With expertise in both
-              frontend and backend technologies, I help businesses transform
-              their ideas into powerful digital solutions.
+              {data.hero.description}
             </Typography>
             <Box sx={{ display: "flex", gap: 2, mb: 4 }}>
               <Button
@@ -42,7 +42,7 @@ export default function Home() {
               <Button
                 variant="text"
                 startIcon={<GitHub />}
-                href="https://github.com/yourusername"
+                href={data.hero.socialLinks.github}
                 target="_blank"
               >
                 GitHub
@@ -50,7 +50,7 @@ export default function Home() {
               <Button
                 variant="text"
                 startIcon={<LinkedIn />}
-                href="https://linkedin.com/in/yourusername"
+                href={data.hero.socialLinks.linkedin}
                 target="_blank"
               >
                 LinkedIn
@@ -58,7 +58,7 @@ export default function Home() {
               <Button
                 variant="text"
                 startIcon={<Download />}
-                href="/path-to-your-cv.pdf"
+                href={data.hero.socialLinks.cv}
                 target="_blank"
               >
                 Download CV
@@ -75,14 +75,7 @@ export default function Home() {
                 Technical Expertise
               </Typography>
               <Grid container spacing={2}>
-                {[
-                  "Frontend Development",
-                  "Backend Development",
-                  "Database Design",
-                  "API Development",
-                  "Cloud Services",
-                  "DevOps",
-                ].map((skill) => (
+                {data.skills.map((skill) => (
                   <Grid key={skill}>
                     <Paper
                       elevation={1}

@@ -12,64 +12,24 @@ import {
   Stack,
 } from "@mui/material";
 import { AccessTime, ArrowForward } from "@mui/icons-material";
+import blogData from "../data/blog.json";
+import type { BlogData } from "../types";
 
 export default function Blog() {
-  const blogPosts = [
-    {
-      title: "Building Scalable React Applications with TypeScript",
-      date: "2025-06-01",
-      excerpt:
-        "Learn how to leverage TypeScript to build more maintainable and scalable React applications. We'll cover best practices, common pitfalls, and advanced patterns.",
-      image: "/blog-react-ts.jpg",
-      category: "Frontend",
-      readTime: "8 min read",
-      slug: "building-scalable-react-apps",
-    },
-    {
-      title: "Optimizing Database Performance in Production",
-      date: "2025-05-28",
-      excerpt:
-        "Discover practical techniques for optimizing database performance in production environments. From indexing strategies to query optimization.",
-      image: "/blog-database.jpg",
-      category: "Backend",
-      readTime: "12 min read",
-      slug: "database-optimization",
-    },
-    {
-      title: "Implementing Secure Authentication with JWT",
-      date: "2025-05-25",
-      excerpt:
-        "A comprehensive guide to implementing secure authentication using JSON Web Tokens (JWT) in your web applications.",
-      image: "/blog-auth.jpg",
-      category: "Security",
-      readTime: "10 min read",
-      slug: "secure-authentication-jwt",
-    },
-    {
-      title: "Modern CSS Techniques for Better Responsive Design",
-      date: "2025-05-22",
-      excerpt:
-        "Explore modern CSS techniques like Grid, Flexbox, and Container Queries to create truly responsive and maintainable layouts.",
-      image: "/blog-css.jpg",
-      category: "CSS",
-      readTime: "6 min read",
-      slug: "modern-css-techniques",
-    },
-  ];
+  const data: BlogData = blogData;
 
   return (
     <Container maxWidth="lg">
       <Box sx={{ py: 4 }}>
         <Typography variant="h2" gutterBottom>
-          Blog
+          {data.title}
         </Typography>
         <Typography variant="body1" paragraph>
-          Sharing knowledge and experiences about web development, best
-          practices, and industry insights.
+          {data.description}
         </Typography>
 
         <Grid container spacing={4}>
-          {blogPosts.map((post) => (
+          {data.posts.map((post) => (
             <Grid key={post.title}>
               <Card
                 sx={{

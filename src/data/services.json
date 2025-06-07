@@ -1,0 +1,76 @@
+{
+  "services": [
+    {
+      "title": "Frontend Development",
+      "iconType": "Code",
+      "description": "Building responsive and interactive user interfaces",
+      "features": [
+        "React/Next.js Applications",
+        "Angular Development",
+        "Vue.js Solutions",
+        "Responsive Design",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "Backend Development",
+      "iconType": "Storage",
+      "description": "Creating robust and scalable server-side solutions",
+      "features": [
+        "Node.js/Express Applications",
+        "Python/Django Solutions",
+        "PHP/Laravel Development",
+        "RESTful API Design",
+        "Authentication & Authorization"
+      ]
+    },
+    {
+      "title": "Database Design",
+      "iconType": "Storage",
+      "description": "Optimizing data storage and retrieval",
+      "features": [
+        "Database Architecture",
+        "SQL Optimization",
+        "NoSQL Solutions",
+        "Data Migration",
+        "Performance Tuning"
+      ]
+    },
+    {
+      "title": "Cloud Services",
+      "iconType": "Cloud",
+      "description": "Deploying and managing cloud infrastructure",
+      "features": [
+        "AWS Solutions",
+        "Google Cloud Platform",
+        "Azure Services",
+        "Server Configuration",
+        "Cloud Migration"
+      ]
+    },
+    {
+      "title": "API Development",
+      "iconType": "Api",
+      "description": "Creating and integrating APIs",
+      "features": [
+        "RESTful API Design",
+        "GraphQL Implementation",
+        "API Documentation",
+        "Integration Testing",
+        "Performance Monitoring"
+      ]
+    },
+    {
+      "title": "Technical Consulting",
+      "iconType": "Assignment",
+      "description": "Providing expert technical guidance",
+      "features": [
+        "Architecture Planning",
+        "Technology Selection",
+        "Code Review",
+        "Best Practices",
+        "Performance Optimization"
+      ]
+    }
+  ]
+}
