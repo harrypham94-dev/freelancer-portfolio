@@ -33,8 +33,8 @@ const menuItems = [
   { text: "About", path: "/about", icon: <Person /> },
   { text: "Projects", path: "/projects", icon: <Work /> },
   { text: "Services", path: "/services", icon: <Build /> },
-  { text: "Contact", path: "/contact", icon: <Mail /> },
   { text: "Blog", path: "/blog", icon: <Article /> },
+  { text: "Contact", path: "/contact", icon: <Mail /> },
 ];
 
 export default function Layout({ children }: LayoutProps) {
