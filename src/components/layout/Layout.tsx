@@ -10,12 +10,16 @@ import {
   Button,
   useTheme,
   useMediaQuery,
-  Menu,
-  MenuItem,
-  Stack,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListItemButton,
 } from "@mui/material";
 import {
   Menu as MenuIcon,
+  Close as CloseIcon,
   Home,
   Person,
   Work,
@@ -38,116 +42,187 @@ const menuItems = [
 ];
 
 export default function Layout({ children }: LayoutProps) {
-  const [mobileMenuAnchor, setMobileMenuAnchor] = useState<null | HTMLElement>(
-    null
-  );
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleOpenMobileMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMenuAnchor(event.currentTarget);
-  };
-
-  const handleCloseMobileMenu = () => {
-    setMobileMenuAnchor(null);
+  const handleDrawerToggle = () => {
+    setMobileDrawerOpen(!mobileDrawerOpen);
   };
 
   const handleNavigation = (path: string) => {
     navigate(path);
-    handleCloseMobileMenu();
+    setMobileDrawerOpen(false);
   };
 
+  const drawer = (
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+        minHeight: "100vh",
+        bgcolor: "background.paper",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          p: 2,
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+      >
+        <Typography variant="h6">Portfolio</Typography>
+        <IconButton
+          color="inherit"
+          aria-label="close drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+        >
+          <CloseIcon />
+        </IconButton>
+      </Box>
+      <List sx={{ pt: 2 }}>
+        {menuItems.map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton
+              onClick={() => handleNavigation(item.path)}
+              selected={location.pathname === item.path}
+              sx={{
+                justifyContent: "flex-start",
+                px: 3,
+                py: 1.5,
+                "&.Mui-selected": {
+                  bgcolor: "primary.main",
+                  color: "primary.contrastText",
+                  "&:hover": {
+                    bgcolor: "primary.dark",
+                  },
+                  "& .MuiListItemIcon-root": {
+                    color: "primary.contrastText",
+                  },
+                },
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 40,
+                  color:
+                    location.pathname === item.path
+                      ? "inherit"
+                      : "primary.main",
+                }}
+              >
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <CssBaseline />
-      <AppBar position="fixed">
-        <Toolbar>
+      <AppBar
+        position="fixed"
+        sx={{
+          boxShadow: 1,
+          bgcolor: "background.paper",
+          color: "text.primary",
+        }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: { xs: 1, md: 0 }, mr: 4 }}
+            sx={{ flexGrow: { xs: 1, md: 0 }, color: "primary.main" }}
           >
             Portfolio
           </Typography>
 
           {isMobile ? (
-            <>
-              <IconButton
-                color="inherit"
-                aria-label="open menu"
-                edge="start"
-                onClick={handleOpenMobileMenu}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                anchorEl={mobileMenuAnchor}
-                open={Boolean(mobileMenuAnchor)}
-                onClose={handleCloseMobileMenu}
-                keepMounted
-              >
-                {menuItems.map((item) => (
-                  <MenuItem
-                    key={item.text}
-                    onClick={() => handleNavigation(item.path)}
-                    selected={location.pathname === item.path}
-                  >
-                    <Box component="span" sx={{ mr: 1, display: "flex" }}>
-                      {item.icon}
-                    </Box>
-                    {item.text}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ ml: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
           ) : (
-            <Stack direction="row" spacing={1} sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
               {menuItems.map((item) => (
                 <Button
                   key={item.text}
-                  color="inherit"
                   onClick={() => handleNavigation(item.path)}
                   startIcon={item.icon}
+                  color={
+                    location.pathname === item.path ? "primary" : "inherit"
+                  }
+                  variant={
+                    location.pathname === item.path ? "contained" : "text"
+                  }
                   sx={{
-                    backgroundColor:
-                      location.pathname === item.path
-                        ? theme.palette.primary.dark
-                        : "transparent",
-                    "&:hover": {
-                      backgroundColor:
-                        location.pathname === item.path
-                          ? theme.palette.primary.dark
-                          : "rgba(255, 255, 255, 0.08)",
-                    },
+                    borderRadius: 2,
+                    minWidth: 100,
                   }}
                 >
                   {item.text}
                 </Button>
               ))}
-            </Stack>
-          )}
-
-          {!isMobile && (
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={() => handleNavigation("/contact")}
-            >
-              Contact Me
-            </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => handleNavigation("/contact")}
+                sx={{ ml: 2 }}
+              >
+                Contact Me
+              </Button>
+            </Box>
           )}
         </Toolbar>
       </AppBar>
+
+      <Drawer
+        variant="temporary"
+        anchor="right"
+        open={isMobile && mobileDrawerOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile
+        }}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: "100%",
+            maxWidth: 360,
+            boxSizing: "border-box",
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
+
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
           width: "100%",
-          marginTop: "64px",
+          mt: "56px",
+          "@media (min-width:0px)": {
+            mt: "48px",
+          },
+          "@media (min-width:600px)": {
+            mt: "64px",
+          },
         }}
       >
         {children}

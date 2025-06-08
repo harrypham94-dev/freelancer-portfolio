@@ -2,7 +2,6 @@ import {
   Container,
   Typography,
   Box,
-  Grid,
   Card,
   CardContent,
   CardHeader,
@@ -10,6 +9,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Stack,
 } from "@mui/material";
 import {
   Code as CodeIcon,
@@ -18,6 +18,7 @@ import {
   Api as ApiIcon,
   Build as BuildIcon,
   Assignment as AssignmentIcon,
+  CheckCircle as CheckIcon,
 } from "@mui/icons-material";
 import servicesData from "../data/services.json";
 import type { ServicesData } from "../types";
@@ -44,44 +45,82 @@ export default function Services() {
 
   return (
     <Container maxWidth="lg">
-      <Box sx={{ py: 4 }}>
-        <Typography variant="h2" gutterBottom>
+      <Box sx={{ py: { xs: 3, md: 4 } }}>
+        <Typography
+          variant="h2"
+          gutterBottom
+          sx={{ fontSize: { xs: "1.75rem", md: "2rem" } }}
+        >
           Services
         </Typography>
-        <Typography variant="body1" paragraph>
+        <Typography variant="body1" paragraph sx={{ mb: { xs: 3, md: 4 } }}>
           I offer a comprehensive range of web development services to help
           bring your ideas to life. Each service is tailored to meet your
           specific needs and requirements.
         </Typography>
 
-        <Grid container spacing={3}>
+        <Stack spacing={{ xs: 2, md: 3 }}>
           {data.services.map((service) => (
-            <Grid key={service.title}>
-              <Card sx={{ height: "100%" }}>
-                <CardHeader
-                  avatar={getIcon(service.iconType)}
-                  title={service.title}
-                  titleTypographyProps={{ variant: "h6" }}
-                />
-                <CardContent>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    {service.description}
+            <Card
+              key={service.title}
+              sx={{
+                height: "100%",
+                transition: "transform 0.2s",
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                },
+              }}
+            >
+              <CardHeader
+                avatar={getIcon(service.iconType)}
+                title={
+                  <Typography
+                    variant="h6"
+                    sx={{ fontSize: { xs: "1.1rem", md: "1.25rem" } }}
+                  >
+                    {service.title}
                   </Typography>
-                  <List dense>
-                    {service.features.map((feature) => (
-                      <ListItem key={feature}>
-                        <ListItemIcon>
-                          <BuildIcon fontSize="small" color="primary" />
-                        </ListItemIcon>
-                        <ListItemText primary={feature} />
-                      </ListItem>
-                    ))}
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
+                }
+                sx={{ pb: 0 }}
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ mb: 2 }}
+                >
+                  {service.description}
+                </Typography>
+                <List dense sx={{ pl: 0 }}>
+                  {service.features.map((feature) => (
+                    <ListItem
+                      key={feature}
+                      sx={{
+                        px: 0,
+                        py: 0.5,
+                      }}
+                    >
+                      <ListItemIcon sx={{ minWidth: 36 }}>
+                        <CheckIcon
+                          fontSize="small"
+                          color="primary"
+                          sx={{ width: 20, height: 20 }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={feature}
+                        primaryTypographyProps={{
+                          variant: "body2",
+                          sx: { fontSize: { xs: "0.875rem", md: "1rem" } },
+                        }}
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
           ))}
-        </Grid>
+        </Stack>
       </Box>
     </Container>
   );
