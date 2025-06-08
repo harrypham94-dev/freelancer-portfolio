@@ -20,11 +20,29 @@ import {
   Assignment as AssignmentIcon,
   CheckCircle as CheckIcon,
 } from "@mui/icons-material";
-import servicesData from "../data/services.json";
+import { useEffect, useState } from "react";
+import { fetchServicesData } from "../services/api";
 import type { ServicesData } from "../types";
+import Loading from "../components/common/Loading";
 
 export default function Services() {
-  const data: ServicesData = servicesData;
+  const [data, setData] = useState<ServicesData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetchServicesData();
+        setData(response);
+      } catch (error) {
+        console.error("Failed to fetch services data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
 
   const getIcon = (iconType: string) => {
     switch (iconType) {
@@ -42,6 +60,10 @@ export default function Services() {
         return <BuildIcon color="primary" />;
     }
   };
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <Container maxWidth="lg">

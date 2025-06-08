@@ -1,9 +1,31 @@
 import { Container, Typography, Box, Paper, Stack } from "@mui/material";
-import aboutData from "../data/about.json";
+import { useEffect, useState } from "react";
+import { fetchAboutData } from "../services/api";
 import type { AboutData } from "../types";
+import Loading from "../components/common/Loading";
 
 export default function About() {
-  const data: AboutData = aboutData;
+  const [data, setData] = useState<AboutData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetchAboutData();
+        setData(response);
+      } catch (error) {
+        console.error("Failed to fetch about data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <Container maxWidth="lg">

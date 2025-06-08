@@ -9,14 +9,36 @@ import {
 } from "@mui/material";
 import { GitHub, LinkedIn, Download } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import homeData from "../data/home.json";
+import { useEffect, useState } from "react";
+import { fetchHomeData } from "../services/api";
 import type { HomeData } from "../types";
+import Loading from "../components/common/Loading";
 
 export default function Home() {
   const navigate = useNavigate();
-  const data: HomeData = homeData;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [data, setData] = useState<HomeData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetchHomeData();
+        setData(response);
+      } catch (error) {
+        console.error("Failed to fetch home data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <Container maxWidth="lg">

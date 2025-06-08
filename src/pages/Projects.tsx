@@ -13,13 +13,35 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { GitHub, Launch } from "@mui/icons-material";
-import projectsData from "../data/projects.json";
+import { useEffect, useState } from "react";
+import { fetchProjectsData } from "../services/api";
 import type { ProjectsData } from "../types";
+import Loading from "../components/common/Loading";
 
 export default function Projects() {
-  const data: ProjectsData = projectsData;
+  const [data, setData] = useState<ProjectsData | null>(null);
+  const [loading, setLoading] = useState(true);
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetchProjectsData();
+        setData(response);
+      } catch (error) {
+        console.error("Failed to fetch projects data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <Container maxWidth="lg">

@@ -12,11 +12,29 @@ import {
   LinkedIn as LinkedInIcon,
   GitHub as GitHubIcon,
 } from "@mui/icons-material";
-import contactData from "../data/contact.json";
+import { useEffect, useState } from "react";
+import { fetchContactData } from "../services/api";
 import type { ContactData } from "../types";
+import Loading from "../components/common/Loading";
 
 export default function Contact() {
-  const data: ContactData = contactData;
+  const [data, setData] = useState<ContactData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetchContactData();
+        setData(response);
+      } catch (error) {
+        console.error("Failed to fetch contact data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
 
   const getIcon = (iconType: string) => {
     switch (iconType) {
@@ -40,6 +58,10 @@ export default function Contact() {
         return null;
     }
   };
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <Container maxWidth="lg">

@@ -13,13 +13,35 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { AccessTime, ArrowForward } from "@mui/icons-material";
-import blogData from "../data/blog.json";
+import { useEffect, useState } from "react";
+import { fetchBlogData } from "../services/api";
 import type { BlogData } from "../types";
+import Loading from "../components/common/Loading";
 
 export default function Blog() {
-  const data: BlogData = blogData;
+  const [data, setData] = useState<BlogData | null>(null);
+  const [loading, setLoading] = useState(true);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetchBlogData();
+        setData(response);
+      } catch (error) {
+        console.error("Failed to fetch blog data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <Container maxWidth="lg">
