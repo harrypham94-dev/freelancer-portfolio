@@ -42,7 +42,7 @@ export default function Projects() {
               sx={{
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
-                height: { xs: "auto", md: 300 },
+                height: { xs: "auto", md: 350 },
               }}
             >
               <CardMedia

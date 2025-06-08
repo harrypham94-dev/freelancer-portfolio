@@ -76,7 +76,7 @@ export default function Layout({ children }: LayoutProps) {
           borderColor: "divider",
         }}
       >
-        <Typography variant="h6">Portfolio</Typography>
+        <Typography variant="h6">Harry Pham</Typography>
         <IconButton
           color="inherit"
           aria-label="close drawer"
@@ -145,7 +145,7 @@ export default function Layout({ children }: LayoutProps) {
             component="div"
             sx={{ flexGrow: { xs: 1, md: 0 }, color: "primary.main" }}
           >
-            Portfolio
+            Harry Pham
           </Typography>
 
           {isMobile ? (
