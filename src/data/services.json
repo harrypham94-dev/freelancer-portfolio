@@ -1,56 +1,62 @@
 {
   "services": [
     {
-      "title": "Backend Development",
+      "title": "Custom Backend Solutions",
       "iconType": "Storage",
-      "description": "Creating robust and scalable server-side solutions using Java and Spring Boot.",
+      "description": "Delivering tailored, scalable backend systems for your unique business needs. Fast turnaround and clear communication guaranteed.",
       "features": [
-        "Java | Spring Boot",
-        "REST APIs",
-        "Microservices",
-        "Scalability & Performance Optimization",
-        "Mockito, JUnit (Testing & Automation)"
+        "Java & Spring Boot Development",
+        "REST API Design & Integration",
+        "Microservices Architecture",
+        "Performance Tuning & Scalability",
+        "Automated Testing (Mockito, JUnit)"
       ]
     },
     {
-      "title": "Database Design & Management",
+      "title": "Database Design & Optimization",
       "iconType": "Storage",
-      "description": "Optimizing data storage and retrieval with various database systems.",
+      "description": "Designing, optimizing, and managing databases to ensure your data is secure, accessible, and efficient.",
       "features": [
-        "MSSQL",
-        "PostgreSQL",
-        "MySQL",
-        "Elasticsearch"
+        "MSSQL, PostgreSQL, MySQL",
+        "Elasticsearch Integration",
+        "Data Modeling & Migration",
+        "Query Optimization",
+        "Backup & Recovery Solutions"
       ]
     },
     {
-      "title": "Cloud & DevOps",
+      "title": "Cloud Deployment & DevOps",
       "iconType": "Cloud",
-      "description": "Deploying and managing cloud infrastructure and implementing CI/CD pipelines.",
+      "description": "Helping you deploy, scale, and maintain your applications in the cloud with modern DevOps practices.",
       "features": [
-        "Docker",
-        "Kubernetes",
-        "Azure",
-        "CI/CD"
+        "Docker & Kubernetes Setup",
+        "Azure Cloud Deployment",
+        "CI/CD Pipeline Implementation",
+        "Infrastructure as Code",
+        "Monitoring & Maintenance"
       ]
     },
     {
-      "title": "API Development",
+      "title": "API Development & Integration",
       "iconType": "Api",
-      "description": "Designing and integrating RESTful APIs.",
+      "description": "Building and integrating robust APIs to connect your systems and automate workflows.",
       "features": [
-        "RESTful API Design",
-        "Integration with Jira, Confluence through Restful API"
+        "RESTful API Development",
+        "Third-party API Integration",
+        "Custom API Solutions",
+        "API Documentation & Support"
       ]
     },
     {
-      "title": "Technical Consulting & Mentoring",
+      "title": "Technical Consulting & Project Support",
       "iconType": "Assignment",
-      "description": "Providing expert technical guidance and mentoring.",
+      "description": "Providing expert advice, project planning, and hands-on support to ensure your project's success.",
       "features": [
-        "Requirements gathering, analysis, design architecture as code",
-        "Participate peer code reviews, providing comments and suggestions",
-        "Mentor and support new members"
+        "Requirements Analysis & Architecture Design",
+        "Code Reviews & Best Practices",
+        "Mentoring & Knowledge Transfer",
+        "Ongoing Maintenance & Support",
+        "Flexible Engagement Models"
       ]
     }
   ]

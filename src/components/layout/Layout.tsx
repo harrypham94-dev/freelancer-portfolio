@@ -194,14 +194,6 @@ export default function Layout({ children }: LayoutProps) {
                   {item.text}
                 </Button>
               ))}
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => handleNavigation("/contact")}
-                sx={{ ml: 2 }}
-              >
-                Contact Me
-              </Button>
             </Box>
           )}
         </Toolbar>

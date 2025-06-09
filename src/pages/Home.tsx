@@ -6,7 +6,6 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { GitHub, LinkedIn, Download } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchHomeData } from "../services/api";
@@ -110,43 +109,6 @@ export default function Home() {
                 sx={{ minWidth: { xs: "100%", sm: "160px" } }}
               >
                 Contact Me
-              </Button>
-            </Box>
-
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                flexWrap: "wrap",
-                justifyContent: { xs: "center", sm: "flex-start" },
-              }}
-            >
-              <Button
-                variant="text"
-                startIcon={<GitHub />}
-                href={data.hero.socialLinks.github}
-                target="_blank"
-                sx={{ minWidth: { xs: "100%", sm: "auto" } }}
-              >
-                GitHub
-              </Button>
-              <Button
-                variant="text"
-                startIcon={<LinkedIn />}
-                href={data.hero.socialLinks.linkedin}
-                target="_blank"
-                sx={{ minWidth: { xs: "100%", sm: "auto" } }}
-              >
-                LinkedIn
-              </Button>
-              <Button
-                variant="text"
-                startIcon={<Download />}
-                href={data.hero.socialLinks.cv}
-                target="_blank"
-                sx={{ minWidth: { xs: "100%", sm: "auto" } }}
-              >
-                Download CV
               </Button>
             </Box>
           </Box>

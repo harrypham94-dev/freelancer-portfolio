@@ -2,21 +2,21 @@
   "introduction": {
     "title": "About Me",
     "description": [
-      "I'm a Java Developer with 4 years of experience, passionate about building scalable and high-performing backend systems. I love solving complex backend challenges, designing efficient microservices, and improving application performance.",
-      "I strongly believe in continuous learning and collaboration, which is why I'm currently diving deeper into System Design principles and exploring React to expand my technical skill set."
+      "I'm a freelance Java Developer with 4 years of experience delivering scalable, high-performing backend solutions for clients worldwide. My passion lies in solving complex technical challenges, designing efficient microservices, and ensuring your applications run smoothly and reliably.",
+      "I pride myself on adaptability, clear communication, and a client-first mindset. Whether you need a new backend system, API integration, or performance optimization, I'm ready to help your project succeed."
     ]
   },
   "skills": [
     {
-      "category": "Backend",
+      "category": "Backend Development",
       "technologies": ["Java", "Spring Boot", "REST APIs", "Microservices"]
     },
     {
-      "category": "Databases",
+      "category": "Database Solutions",
       "technologies": ["MSSQL", "PostgreSQL", "MySQL", "Elasticsearch"]
     },
     {
-      "category": "Testing & Automation",
+      "category": "Testing & Quality Assurance",
       "technologies": ["Mockito", "JUnit"]
     },
     {
@@ -24,26 +24,30 @@
       "technologies": ["Docker", "Kubernetes", "Azure", "CI/CD"]
     },
     {
-      "category": "Frontend (Learning)",
+      "category": "Frontend (for Full-Stack Projects)",
       "technologies": ["React", "TypeScript"]
+    },
+    {
+      "category": "Client Services",
+      "technologies": ["Project Consultation", "Requirement Analysis", "Ongoing Support"]
     }
   ],
   "coreValues": [
     {
-      "title": "Continuous Learning",
-      "description": "Always open to discussions on Java, backend development, and system design. Let's connect and learn from each other!"
+      "title": "Client Success",
+      "description": "Your goals are my priority. I focus on delivering solutions that drive real value for your business."
     },
     {
-      "title": "Collaboration",
-      "description": "Believing in continuous learning and collaboration."
+      "title": "Clear Communication",
+      "description": "Transparent and timely updates throughout every project phase."
     },
     {
-      "title": "Problem Solving",
-      "description": "Love solving complex backend challenges."
+      "title": "Adaptability",
+      "description": "Flexible to your needs, project scope, and preferred workflows."
     },
     {
-      "title": "Performance Improvement",
-      "description": "Improving application performance."
+      "title": "Quality & Reliability",
+      "description": "Committed to robust, maintainable, and high-quality code."
     }
   ]
 }

@@ -1,32 +1,21 @@
 {
   "hero": {
-    "title": "Java Developer | Backend Engineer",
-    "subtitle": "Growing & Learning Together",
-    "description": "Hi, I'm a passionate Java Developer with 4 years of experience, passionate about building scalable and high-performing backend systems. I love solving complex backend challenges, designing efficient microservices, and improving application performance. I strongly believe in continuous learning and collaboration, which is why I'm currently diving deeper into System Design principles and exploring React to expand my technical skill set.",
-    "socialLinks": {
-      "github": "https://github.com/yourusername",
-      "linkedin": "www.linkedin.com/in/harrypham-dev",
-      "cv": "/path-to-your-cv.pdf"
-    }
+    "title": "Freelance Java Developer | Backend Specialist",
+    "subtitle": "Delivering Scalable Solutions for Your Business",
+    "description": "Hi, I'm a results-driven freelance Java Developer with 4 years of experience helping clients build robust, scalable, and high-performing backend systems. I specialize in solving complex technical challenges, designing efficient microservices, and optimizing application performance to meet your business needs. My approach is client-focused, collaborative, and adaptable—ensuring every project is delivered on time and exceeds expectations. Let's work together to bring your ideas to life!"
   },
   "skills": [
-    "Cloud Administration",
-    "TypeScript",
-    "React.js",
-    "Java",
-    "Spring Boot",
-    "REST APIs",
-    "Microservices",
-    "MSSQL",
-    "PostgreSQL",
-    "MySQL",
-    "Elasticsearch",
-    "Scalability & Performance Optimization",
-    "Mockito",
-    "JUnit",
-    "Docker",
-    "Kubernetes",
-    "Azure",
-    "CI/CD"
+    "Custom Backend Development",
+    "API Integration & Development",
+    "Java & Spring Boot",
+    "Microservices Architecture",
+    "Database Design (MSSQL, PostgreSQL, MySQL)",
+    "Cloud Deployment (Azure, Docker, Kubernetes)",
+    "Performance Optimization",
+    "CI/CD Pipeline Setup",
+    "Testing (JUnit, Mockito)",
+    "Client Communication",
+    "Project Management",
+    "TypeScript & React.js (for full-stack needs)"
   ]
 }

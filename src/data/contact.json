@@ -1,6 +1,6 @@
 {
-  "title": "Contact Me",
-  "description": "Always open to discussions on Java, backend development, and system design. Let's connect and learn from each other!",
+  "title": "Let's Work Together",
+  "description": "Looking for a reliable freelance developer for your next project? I'm available for new opportunities, collaborations, and consulting. Reach out and let's discuss how I can help your business succeed.",
   "contactInfo": [
     {
       "title": "Email",
@@ -10,7 +10,7 @@
     },
     {
       "title": "LinkedIn",
-      "content": "www.linkedin.com/in/harrypham-dev",
+      "content": "linkedin.com/in/harrypham-dev",
       "link": "https://www.linkedin.com/in/harrypham-dev",
       "iconType": "LinkedIn"
     }
