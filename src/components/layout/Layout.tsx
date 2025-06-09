@@ -128,7 +128,14 @@ export default function Layout({ children }: LayoutProps) {
   );
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        width: "100vw",
+      }}
+    >
       <CssBaseline />
       <AppBar
         position="fixed"

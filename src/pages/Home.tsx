@@ -76,11 +76,10 @@ export default function Home() {
             </Typography>
             <Typography
               variant="body1"
-              paragraph
+              align="justify"
               sx={{
                 fontSize: { xs: "1rem", md: "1.125rem" },
                 mb: 4,
-                maxWidth: "600px",
               }}
             >
               {data.hero.description}
@@ -151,57 +150,6 @@ export default function Home() {
                 Download CV
               </Button>
             </Box>
-          </Box>
-
-          {/* Technical Expertise */}
-          <Box sx={{ flex: { md: 1 } }}>
-            <Paper
-              elevation={2}
-              sx={{
-                p: 3,
-                borderRadius: 2,
-                bgcolor: "background.default",
-                height: "100%",
-              }}
-            >
-              <Typography
-                variant="h3"
-                gutterBottom
-                sx={{ fontSize: { xs: "1.5rem", md: "1.75rem" } }}
-              >
-                Technical Expertise
-              </Typography>
-              <Box
-                sx={{
-                  display: "grid",
-                  gap: 2,
-                  gridTemplateColumns: {
-                    xs: "1fr",
-                    sm: "repeat(2, 1fr)",
-                    md: "1fr",
-                  },
-                }}
-              >
-                {data.skills.map((skill) => (
-                  <Paper
-                    key={skill}
-                    elevation={1}
-                    sx={{
-                      p: 2,
-                      textAlign: "center",
-                      bgcolor: "primary.light",
-                      color: "primary.contrastText",
-                      transition: "transform 0.2s",
-                      "&:hover": {
-                        transform: "translateY(-4px)",
-                      },
-                    }}
-                  >
-                    {skill}
-                  </Paper>
-                ))}
-              </Box>
-            </Paper>
           </Box>
         </Box>
       </Box>

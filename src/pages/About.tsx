@@ -1,4 +1,4 @@
-import { Container, Typography, Box, Paper, Stack } from "@mui/material";
+import { Container, Typography, Box, Paper, Stack, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { fetchAboutData } from "../services/api";
 import type { AboutData } from "../types";
@@ -44,11 +44,11 @@ export default function About() {
         <Stack spacing={2} sx={{ mb: { xs: 4, md: 6 } }}>
           {data.introduction.description.map((paragraph, index) => (
             <Typography
+              align="justify"
               key={index}
               variant="body1"
               sx={{
                 fontSize: { xs: "1rem", md: "1.125rem" },
-                maxWidth: 800,
               }}
             >
               {paragraph}
@@ -67,14 +67,7 @@ export default function About() {
           >
             Technical Skills
           </Typography>
-          <Stack
-            spacing={{ xs: 2, md: 3 }}
-            direction={{ xs: "column", md: "row" }}
-            sx={{
-              flexWrap: "wrap",
-              gap: { xs: 2, md: 3 },
-            }}
-          >
+          <Grid container columnSpacing={5} rowSpacing={3}>
             {data.skills.map((skillSet) => (
               <Paper
                 key={skillSet.category}
@@ -91,7 +84,7 @@ export default function About() {
                     transform: "translateY(-4px)",
                   },
                 }}
-                elevation={1}
+                elevation={2}
               >
                 <Typography
                   variant="h6"
@@ -119,7 +112,7 @@ export default function About() {
                 </Stack>
               </Paper>
             ))}
-          </Stack>
+          </Grid>
         </Box>
 
         <Box>
@@ -133,14 +126,7 @@ export default function About() {
           >
             Core Values
           </Typography>
-          <Stack
-            spacing={{ xs: 2, md: 3 }}
-            direction={{ xs: "column", sm: "row" }}
-            sx={{
-              flexWrap: "wrap",
-              gap: { xs: 2, md: 3 },
-            }}
-          >
+          <Grid container spacing={3}>
             {data.coreValues.map((value) => (
               <Paper
                 key={value.title}
@@ -153,7 +139,7 @@ export default function About() {
                     transform: "translateY(-4px)",
                   },
                 }}
-                elevation={1}
+                elevation={2}
               >
                 <Typography
                   variant="h6"
@@ -176,7 +162,7 @@ export default function About() {
                 </Typography>
               </Paper>
             ))}
-          </Stack>
+          </Grid>
         </Box>
       </Box>
     </Container>
