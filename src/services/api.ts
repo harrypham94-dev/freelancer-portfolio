@@ -1,37 +1,32 @@
-import axios from 'axios';
+// Import JSON data
+import aboutData from '../data/about.json';
+import blogData from '../data/blog.json';
+import contactData from '../data/contact.json';
+import projectsData from '../data/projects.json';
+import servicesData from '../data/services.json';
+import homeData from '../data/home.json';
+import type { AboutData, BlogData, ContactData, ProjectsData, ServicesData, HomeData } from '../types';
 
-const BASE_URL = 'https://freelancer-portfolio-backend.onrender.com';
-
-const api = axios.create({
-  baseURL: BASE_URL,
-});
-
-export const fetchAboutData = async () => {
-  const response = await api.get('/api/about');
-  return response.data;
+export const fetchAboutData = async (): Promise<AboutData> => {
+  return aboutData;
 };
 
-export const fetchBlogData = async () => {
-  const response = await api.get('/api/blog');
-  return response.data;
+export const fetchBlogData = async (): Promise<BlogData> => {
+  return blogData;
 };
 
-export const fetchContactData = async () => {
-  const response = await api.get('/api/contact');
-  return response.data;
+export const fetchContactData = async (): Promise<ContactData> => {
+  return contactData;
 };
 
-export const fetchHomeData = async () => {
-  const response = await api.get('/api/home');
-  return response.data;
+export const fetchProjectsData = async (): Promise<ProjectsData> => {
+  return projectsData;
 };
 
-export const fetchProjectsData = async () => {
-  const response = await api.get('/api/projects');
-  return response.data;
+export const fetchServicesData = async (): Promise<ServicesData> => {
+  return servicesData;
 };
 
-export const fetchServicesData = async () => {
-  const response = await api.get('/api/services');
-  return response.data;
+export const fetchHomeData = async (): Promise<HomeData> => {
+  return homeData;
 };
