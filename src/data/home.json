@@ -1,20 +1,32 @@
 {
   "hero": {
-    "title": "Professional Fullstack Developer",
-    "subtitle": "Turning Ideas into Reality",
-    "description": "Hi, I'm a passionate fullstack developer specializing in creating robust and scalable web applications. With expertise in both frontend and backend technologies, I help businesses transform their ideas into powerful digital solutions.",
+    "title": "Java Developer | Backend Engineer",
+    "subtitle": "Growing & Learning Together",
+    "description": "Hi, I'm a passionate Java Developer with 4 years of experience, passionate about building scalable and high-performing backend systems. I love solving complex backend challenges, designing efficient microservices, and improving application performance. I strongly believe in continuous learning and collaboration, which is why I'm currently diving deeper into System Design principles and exploring React to expand my technical skill set.",
     "socialLinks": {
       "github": "https://github.com/yourusername",
-      "linkedin": "https://linkedin.com/in/yourusername",
+      "linkedin": "www.linkedin.com/in/harrypham-dev",
       "cv": "/path-to-your-cv.pdf"
     }
   },
   "skills": [
-    "Frontend Development",
-    "Backend Development",
-    "Database Design",
-    "API Development",
-    "Cloud Services",
-    "DevOps"
+    "Cloud Administration",
+    "TypeScript",
+    "React.js",
+    "Java",
+    "Spring Boot",
+    "REST APIs",
+    "Microservices",
+    "MSSQL",
+    "PostgreSQL",
+    "MySQL",
+    "Elasticsearch",
+    "Scalability & Performance Optimization",
+    "Mockito",
+    "JUnit",
+    "Docker",
+    "Kubernetes",
+    "Azure",
+    "CI/CD"
   ]
 }

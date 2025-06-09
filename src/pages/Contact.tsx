@@ -80,7 +80,6 @@ export default function Contact() {
           variant="body1"
           sx={{
             mb: { xs: 3, md: 4 },
-            maxWidth: 600,
           }}
         >
           {data.description}

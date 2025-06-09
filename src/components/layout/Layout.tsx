@@ -2,6 +2,7 @@ import { type ReactNode, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   AppBar,
+  Avatar,
   Box,
   CssBaseline,
   IconButton,
@@ -76,7 +77,7 @@ export default function Layout({ children }: LayoutProps) {
           borderColor: "divider",
         }}
       >
-        <Typography variant="h6">Harry Pham</Typography>
+        <Typography variant="h6">Hieu Pham</Typography>
         <IconButton
           color="inherit"
           aria-label="close drawer"
@@ -146,14 +147,21 @@ export default function Layout({ children }: LayoutProps) {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: { xs: 1, md: 0 }, color: "primary.main" }}
-          >
-            Harry Pham
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <Avatar
+              alt="Hieu Pham"
+              src="https://media.licdn.com/dms/image/v2/D5603AQHBSXx7N3WxsQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683522547294?e=1755129600&v=beta&t=l8tNcEZVFR2D5qaNPwoB0N8hTigE6q6X5LAAxzb28pg"
+              sx={{ width: 40, height: 40 }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: { xs: 1, md: 0 }, color: "primary.main" }}
+            >
+              Hieu Pham
+            </Typography>
+          </Box>
 
           {isMobile ? (
             <IconButton

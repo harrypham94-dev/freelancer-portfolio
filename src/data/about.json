@@ -2,44 +2,48 @@
   "introduction": {
     "title": "About Me",
     "description": [
-      "I am a passionate fullstack developer with extensive experience in building modern web applications. My journey in software development started with a curiosity about how things work on the internet, which led me to dive deep into both frontend and backend technologies.",
-      "With over X years of experience in the industry, I've had the opportunity to work on various challenging projects that have helped me develop a comprehensive understanding of the software development lifecycle."
+      "I'm a Java Developer with 4 years of experience, passionate about building scalable and high-performing backend systems. I love solving complex backend challenges, designing efficient microservices, and improving application performance.",
+      "I strongly believe in continuous learning and collaboration, which is why I'm currently diving deeper into System Design principles and exploring React to expand my technical skill set."
     ]
   },
   "skills": [
     {
-      "category": "Frontend",
-      "technologies": ["React", "TypeScript", "Material UI", "Next.js", "CSS/SASS"]
-    },
-    {
       "category": "Backend",
-      "technologies": ["Node.js", "Express", "Python", "Django", "PHP"]
+      "technologies": ["Java", "Spring Boot", "REST APIs", "Microservices"]
     },
     {
-      "category": "Database",
-      "technologies": ["MongoDB", "PostgreSQL", "MySQL", "Redis"]
+      "category": "Databases",
+      "technologies": ["MSSQL", "PostgreSQL", "MySQL", "Elasticsearch"]
     },
     {
-      "category": "DevOps",
-      "technologies": ["Docker", "AWS", "CI/CD", "Git", "Linux"]
+      "category": "Testing & Automation",
+      "technologies": ["Mockito", "JUnit"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "technologies": ["Docker", "Kubernetes", "Azure", "CI/CD"]
+    },
+    {
+      "category": "Frontend (Learning)",
+      "technologies": ["React", "TypeScript"]
     }
   ],
   "coreValues": [
     {
-      "title": "Clean Code",
-      "description": "Writing maintainable and scalable code that follows best practices."
+      "title": "Continuous Learning",
+      "description": "Always open to discussions on Java, backend development, and system design. Let's connect and learn from each other!"
     },
     {
-      "title": "User Experience",
-      "description": "Creating intuitive and responsive interfaces that users love."
+      "title": "Collaboration",
+      "description": "Believing in continuous learning and collaboration."
     },
     {
-      "title": "Performance",
-      "description": "Optimizing applications for speed and efficiency."
+      "title": "Problem Solving",
+      "description": "Love solving complex backend challenges."
     },
     {
-      "title": "Security",
-      "description": "Implementing robust security measures to protect user data."
+      "title": "Performance Improvement",
+      "description": "Improving application performance."
     }
   ]
 }

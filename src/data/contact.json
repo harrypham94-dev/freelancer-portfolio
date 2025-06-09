@@ -1,30 +1,18 @@
 {
   "title": "Contact Me",
-  "description": "Have a project in mind? Let's discuss how we can work together to bring your ideas to life.",
+  "description": "Always open to discussions on Java, backend development, and system design. Let's connect and learn from each other!",
   "contactInfo": [
     {
       "title": "Email",
-      "content": "your.email@example.com",
-      "link": "mailto:your.email@example.com",
+      "content": "harrypham94.dev@gmail.com",
+      "link": "mailto:harrypham94.dev@gmail.com",
       "iconType": "Email"
     },
     {
-      "title": "Phone",
-      "content": "+1 (555) 123-4567",
-      "link": "tel:+15551234567",
-      "iconType": "Phone"
-    },
-    {
       "title": "LinkedIn",
-      "content": "linkedin.com/in/yourprofile",
-      "link": "https://linkedin.com/in/yourprofile",
+      "content": "www.linkedin.com/in/harrypham-dev",
+      "link": "https://www.linkedin.com/in/harrypham-dev",
       "iconType": "LinkedIn"
-    },
-    {
-      "title": "GitHub",
-      "content": "github.com/yourusername",
-      "link": "https://github.com/yourusername",
-      "iconType": "GitHub"
     }
   ]
 }

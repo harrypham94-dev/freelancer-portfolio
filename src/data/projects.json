@@ -1,33 +1,24 @@
 {
   "title": "Featured Projects",
-  "description": "Here are some of the projects I've worked on. Each project demonstrates different aspects of my technical skills and problem-solving abilities.",
+  "description": "Here are some of the key experiences and responsibilities from my professional career.",
   "projects": [
     {
-      "title": "Task Management System",
-      "description": "A comprehensive project management tool similar to Jira, featuring task tracking, user assignments, and real-time updates.",
-      "image": "/project1.jpg",
-      "technologies": ["React", "Node.js", "MongoDB", "Socket.io"],
-      "liveDemo": "https://demo-task-manager.com",
-      "sourceCode": "https://github.com/yourusername/task-manager",
-      "challenges": "Implementing real-time updates while maintaining application performance was a key challenge."
+      "title": "Automatic Architecture Documentation",
+      "description": "Involved in requirements gathering, analysis, design architecture as code. Integration with different systems such as Jira, Confluence through Restful API. Developing library to generate model code using Java Core and unit testing according to TDD. Monitor importer, exporter, publisher jobs using TeamCity. Working on agile scrum methodology and using kanban to monitor workflow. Participate peer code reviews, providing comments and suggestions. Mentor and support new members.",
+      "image": "https://www.netsolutions.com/wp-content/uploads/2024/12/What-is-Software-Architecture-in-Software-Engineering_.webp",
+      "technologies": ["Java Core", "RESTful API", "TDD", "TeamCity", "Agile Scrum", "Kanban"],
+      "liveDemo": "",
+      "sourceCode": "",
+      "challenges": "Integrating with different systems and developing a model code generation library."
     },
     {
-      "title": "E-commerce Platform",
-      "description": "A full-featured online store with product management, shopping cart, and secure payment integration.",
-      "image": "/project2.jpg",
-      "technologies": ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      "liveDemo": "https://demo-ecommerce.com",
-      "sourceCode": "https://github.com/yourusername/ecommerce",
-      "challenges": "Ensuring secure payment processing and optimizing the checkout flow for better conversion rates."
-    },
-    {
-      "title": "Social Media Dashboard",
-      "description": "Analytics dashboard for social media metrics with data visualization and reporting features.",
-      "image": "/project3.jpg",
-      "technologies": ["React", "D3.js", "Express", "Redis"],
-      "liveDemo": "https://demo-dashboard.com",
-      "sourceCode": "https://github.com/yourusername/dashboard",
-      "challenges": "Processing and visualizing large datasets while maintaining smooth user experience."
+      "title": "Mall Loyalty Application",
+      "description": "Involved in requirements gathering, analysis, design, and documentation of the application. Implementing the backend business layers using Restful web services, Redis cache and Azure queue systems. Developing microservices using Java Spring Boot, Hibernate with good quality of code. Developing and unit testing assigned software features and functionalities using Postman. Working on agile scrum methodology and involving in stand-up meetings to monitor the progress. Presented and added the value to the team through participation in peer code reviews, providing comments and suggestions. Integrated collaboratively with cross-functional teams to achieve goals.",
+      "image": "https://www.taosabao.com/wp-content/uploads/2022/03/10-reasons-shopping-mall-loyal-program-works.jpg",
+      "technologies": ["Java Spring Boot", "Hibernate", "RESTful Web Services", "Redis Cache", "Azure Queue Systems", "Postman", "Agile Scrum"],
+      "liveDemo": "",
+      "sourceCode": "",
+      "challenges": "Implementing backend business layers with Redis cache and Azure queue systems, and developing microservices with high code quality."
     }
   ]
 }

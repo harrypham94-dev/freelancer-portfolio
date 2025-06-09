@@ -1,75 +1,56 @@
 {
   "services": [
     {
-      "title": "Frontend Development",
-      "iconType": "Code",
-      "description": "Building responsive and interactive user interfaces",
-      "features": [
-        "React/Next.js Applications",
-        "Angular Development",
-        "Vue.js Solutions",
-        "Responsive Design",
-        "Performance Optimization"
-      ]
-    },
-    {
       "title": "Backend Development",
       "iconType": "Storage",
-      "description": "Creating robust and scalable server-side solutions",
+      "description": "Creating robust and scalable server-side solutions using Java and Spring Boot.",
       "features": [
-        "Node.js/Express Applications",
-        "Python/Django Solutions",
-        "PHP/Laravel Development",
-        "RESTful API Design",
-        "Authentication & Authorization"
+        "Java | Spring Boot",
+        "REST APIs",
+        "Microservices",
+        "Scalability & Performance Optimization",
+        "Mockito, JUnit (Testing & Automation)"
       ]
     },
     {
-      "title": "Database Design",
+      "title": "Database Design & Management",
       "iconType": "Storage",
-      "description": "Optimizing data storage and retrieval",
+      "description": "Optimizing data storage and retrieval with various database systems.",
       "features": [
-        "Database Architecture",
-        "SQL Optimization",
-        "NoSQL Solutions",
-        "Data Migration",
-        "Performance Tuning"
+        "MSSQL",
+        "PostgreSQL",
+        "MySQL",
+        "Elasticsearch"
       ]
     },
     {
-      "title": "Cloud Services",
+      "title": "Cloud & DevOps",
       "iconType": "Cloud",
-      "description": "Deploying and managing cloud infrastructure",
+      "description": "Deploying and managing cloud infrastructure and implementing CI/CD pipelines.",
       "features": [
-        "AWS Solutions",
-        "Google Cloud Platform",
-        "Azure Services",
-        "Server Configuration",
-        "Cloud Migration"
+        "Docker",
+        "Kubernetes",
+        "Azure",
+        "CI/CD"
       ]
     },
     {
       "title": "API Development",
       "iconType": "Api",
-      "description": "Creating and integrating APIs",
+      "description": "Designing and integrating RESTful APIs.",
       "features": [
         "RESTful API Design",
-        "GraphQL Implementation",
-        "API Documentation",
-        "Integration Testing",
-        "Performance Monitoring"
+        "Integration with Jira, Confluence through Restful API"
       ]
     },
     {
-      "title": "Technical Consulting",
+      "title": "Technical Consulting & Mentoring",
       "iconType": "Assignment",
-      "description": "Providing expert technical guidance",
+      "description": "Providing expert technical guidance and mentoring.",
       "features": [
-        "Architecture Planning",
-        "Technology Selection",
-        "Code Review",
-        "Best Practices",
-        "Performance Optimization"
+        "Requirements gathering, analysis, design architecture as code",
+        "Participate peer code reviews, providing comments and suggestions",
+        "Mentor and support new members"
       ]
     }
   ]
