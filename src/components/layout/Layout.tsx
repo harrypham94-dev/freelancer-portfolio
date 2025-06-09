@@ -23,10 +23,8 @@ import {
   Close as CloseIcon,
   Home,
   Person,
-  Work,
   Build,
   Mail,
-  Article,
 } from "@mui/icons-material";
 
 interface LayoutProps {
