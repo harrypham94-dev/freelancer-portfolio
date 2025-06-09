@@ -25,6 +25,7 @@ import {
   Person,
   Build,
   Mail,
+  Work,
 } from "@mui/icons-material";
 
 interface LayoutProps {
@@ -34,7 +35,7 @@ interface LayoutProps {
 const menuItems = [
   { text: "Home", path: "/", icon: <Home /> },
   { text: "About", path: "/about", icon: <Person /> },
-  // { text: "Projects", path: "/projects", icon: <Work /> },
+  { text: "Projects", path: "/projects", icon: <Work /> },
   { text: "Services", path: "/services", icon: <Build /> },
   // { text: "Blog", path: "/blog", icon: <Article /> },
   { text: "Contact", path: "/contact", icon: <Mail /> },
