@@ -3,7 +3,6 @@ import {
   Button,
   Container,
   Typography,
-  Paper,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
