@@ -84,11 +84,6 @@ export interface HomeData {
     title: string;
     subtitle: string;
     description: string;
-    socialLinks: {
-      github: string;
-      linkedin: string;
-      cv: string;
-    };
   };
   skills: string[];
 }
